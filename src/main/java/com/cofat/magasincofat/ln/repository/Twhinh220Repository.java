@@ -1,4 +1,4 @@
-package com.cofat.magasincofat.ln.repositories;
+package com.cofat.magasincofat.ln.repository;
 
 //import com.cofat.GestionMagasin.entities.Twhinh200120;
 

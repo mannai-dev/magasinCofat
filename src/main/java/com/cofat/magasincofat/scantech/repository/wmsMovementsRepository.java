@@ -1,4 +1,4 @@
-package com.cofat.magasincofat.scantech.repositories;
+package com.cofat.magasincofat.scantech.repository;
 
 import com.cofat.magasincofat.scantech.entities.wmsMovementsEntity;
 import org.springframework.data.jpa.repository.JpaRepository;

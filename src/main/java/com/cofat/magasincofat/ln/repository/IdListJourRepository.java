@@ -1,4 +1,4 @@
-package com.cofat.magasincofat.ln.repositories;
+package com.cofat.magasincofat.ln.repository;
 
 import com.cofat.magasincofat.ln.entities.IdListJour;
 import org.springframework.data.jpa.repository.JpaRepository;
