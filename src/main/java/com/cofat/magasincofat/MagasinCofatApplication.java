@@ -15,29 +15,17 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.sql.DataSource;
 import java.util.Arrays;
-//import java.util.Map;
 
-//@ComponentScan(basePackages = "com.cofat.magasincofat")
 @SpringBootApplication
-//@EnableJpaRepositories
-//@EnableJpaRepositories(basePackages = {"com.cofat.magasincofat.ln.repositories", "com.cofat.magasincofat.scantech.repositories"})
 public class MagasinCofatApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(MagasinCofatApplication.class, args);
-    }
 
+
+    }
 
    /* @Bean
-    public DataSourceFactory dataSourceFactory() {
-        return new DataSourceFactory();
-    }
-    @Bean
-    public EntityManagerFactory entityManagerFactory() {
-        return Persistence.createEntityManagerFactory("persistence-unit-name", dataSourceFactory());
-    }
-*/
-    @Bean
     public CorsFilter corsFilter() {
         CorsConfiguration corsConfiguration = new CorsConfiguration();
         corsConfiguration.setAllowCredentials(true);
@@ -51,6 +39,6 @@ public class MagasinCofatApplication {
         UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = new UrlBasedCorsConfigurationSource();
         urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
         return new CorsFilter(urlBasedCorsConfigurationSource);
-    }
+    } */
 
 }
