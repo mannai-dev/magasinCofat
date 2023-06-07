@@ -10,22 +10,23 @@ import java.time.LocalDate;
 
 @Data
 @Entity
+@IdClass(Twhinh200120Id.class)
 @Table(name = "twhinh200")
 public class Twhinh200120 implements Serializable {
-
+/*
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id")
     private Integer id;
-
+*/
 
     @Basic
     @Column(name = "t_oorg", nullable = true)
     private Integer tOorg;
-    @Basic
+    @Id
     @Column(name = "t_orno", nullable = true, length = 9)
     private String tOrno;
-    @Basic
+    @Id
     @Column(name = "t_oset", nullable = true)
     private Integer tOset;
     @Basic

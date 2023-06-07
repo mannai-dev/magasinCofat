@@ -1,6 +1,6 @@
 package com.cofat.magasincofat.service.ln;
 
-import com.cofat.magasincofat.entity.ln.Ttcibd001120Entity;
+import com.cofat.magasincofat.entity.ln.Ttcibd001120;
 import com.cofat.magasincofat.repository.ln.Ttcibd001120Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,12 +12,12 @@ public class Ttcibd001120ServiceImpl implements ITtcibd001120Service {
     @Autowired
     Ttcibd001120Repository ttcibd001120Repository;
     @Override
-    public void addTtcibd001120(Ttcibd001120Entity ttcibd001120Entity) {
+    public void addTtcibd001120(Ttcibd001120 ttcibd001120Entity) {
         ttcibd001120Repository.save(ttcibd001120Entity);
     }
 
     @Override
-    public List<Ttcibd001120Entity> getAllTtcibd001120Entity() {
+    public List<Ttcibd001120> getAllTtcibd001120Entity() {
         return ttcibd001120Repository.findAll();
     }
 
@@ -27,12 +27,12 @@ public class Ttcibd001120ServiceImpl implements ITtcibd001120Service {
     }
 
     @Override
-    public Ttcibd001120Entity getTtcibd001120EntityByTItem(String tItem){
+    public Ttcibd001120 getTtcibd001120EntityByTItem(String tItem){
         return ttcibd001120Repository.findTtcibd001120EntitiesById(tItem);
     }
 
     @Override
-    public Ttcibd001120Entity updateTtcibd001120Entity(Ttcibd001120Entity ttcibd001120Entity) {
+    public Ttcibd001120 updateTtcibd001120Entity(Ttcibd001120 ttcibd001120Entity) {
         return ttcibd001120Repository.save(ttcibd001120Entity);
     }
 }

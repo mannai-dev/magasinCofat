@@ -6,6 +6,8 @@ import com.cofat.magasincofat.repository.ln.*;
 import com.cofat.magasincofat.repository.scantech.*;
 import com.cofat.magasincofat.service.ln.*;
 import com.cofat.magasincofat.service.scantech.*;
+import lombok.extern.slf4j.Slf4j;
+import lombok.extern.slf4j.XSlf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -32,8 +34,8 @@ public class Twhinh200ServiceImpl implements ITwhinh200Service{
     wmsMovementsServiceImpl movementsService;
     @Autowired
     wmsMovementsRepository movementsRepository;
-    @Autowired
-    Ttcibd001Repository ttcibd001Repository;
+  //  @Autowired
+    //Ttcibd001Repository ttcibd001Repository;
     @Autowired
     wmsProductsRepository productsRepository;
 
@@ -82,8 +84,8 @@ public class Twhinh200ServiceImpl implements ITwhinh200Service{
         twhinh200120List=twhinh200Repository.findByDate(this.formattedDate3);
         System.out.println(twhinh200120List.size());
         for (Twhinh200120 twh200: twhinh200120List){
-            System.out.println("id : ");
-            System.out.println(twh200.getId());
+            System.out.println("tOrno : ");
+            System.out.println(twh200.getTOrno());
         }
     }
     @Override
@@ -253,18 +255,18 @@ public class Twhinh200ServiceImpl implements ITwhinh200Service{
     @Scheduled(cron = "0 0/1 * * * ?")
     //@Scheduled(cron= "0 27 14,15,16 * * *")
     public void ajout220(){
-        System.out.println("d5alna lil ajout220");
+     /*   System.out.println("d5alna lil ajout220");
         System.out.println("this.dateStr : "+this.dateStr);
         System.out.println("this.extractedDate : "+this.extractedDate);
         System.out.println("this.dte : " + this.dte);
         System.out.println("this.year : "+this.year);
         System.out.println("this.formattedDate : "+this.formattedDate);
         System.out.println("this.formattedDate2 : "+ this.formattedDate2 );
-        System.out.println("bech nchoufou movement fiha date lyoumw lé ?");
+       */
+        System.out.println("On va verifier si la table movements contient des ligne aves la date d'aujourd'hui ?");
         if (movementsRepository.findAllByDate(this.formattedDate2)!=null){
-            System.out.println("ey fiha date lyoum :) donc bech nchoufou inh200 fiha date lyoum w lé ?");
+            System.out.println("On va verifier si Twhinh200120 contient la date d'aujourd'hui ou non ?");
             if (twhinh200Repository.findByDate(this.formattedDate3)==null){
-                System.out.println("inh 200 maihech date lyoum donc bech ne5dmou l'insertion li 200 w 204");
                 nextTwhinh200120();
                 System.out.println("Ligne Twhinh200 Ajouté avec succées :) ");
                 twhinh204Service.addTwhinh204120();
@@ -280,7 +282,11 @@ public class Twhinh200ServiceImpl implements ITwhinh200Service{
 
     @Scheduled(cron = "0 0/1 * * * ?")
     public void testCron(){
+
         System.out.println("test cron ");
+        nextTwhinh200120();
+        twhinh204Service.addTwhinh204120();
+        System.out.println("yes");
     }
 
 }

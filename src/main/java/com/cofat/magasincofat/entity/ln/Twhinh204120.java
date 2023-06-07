@@ -7,6 +7,7 @@ import java.io.Serializable;
 
 @Data
 @Entity
+//@IdClass(Twhinh204120Id.class)
 @Table(name="Twhinh204")
 public class Twhinh204120 implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)

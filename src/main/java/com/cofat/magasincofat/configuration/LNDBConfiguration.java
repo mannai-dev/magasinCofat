@@ -4,6 +4,7 @@ package com.cofat.magasincofat.configuration;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -43,14 +44,12 @@ public class LNDBConfiguration {
     @Bean
     public LocalContainerEntityManagerFactoryBean lnDSEmFactory(@Qualifier("lnDS") DataSource lnDS, EntityManagerFactoryBuilder builder) {
         return builder.dataSource(lnDS).packages(Twhinh200120.class).build();
-                //builder.dataSource(lnDS).packages(ln).build();
     }
 
-
+//mbaad na7i primary
     @Primary
     @Bean
     public PlatformTransactionManager lnDSTransactionManager(EntityManagerFactory lnDSEmFactory) {
         return new JpaTransactionManager(lnDSEmFactory);
     }
-
 }

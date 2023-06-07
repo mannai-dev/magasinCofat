@@ -191,4 +191,8 @@ public class Twhinh204ServiceImpl implements ITwhinh204Service{
         tw.setTRefcntu(0);
         return tw;
     }
+
+    public void addTwhinh204120Manuel(Twhinh204120 twhinh204120) {
+            twhinh204Repository.save(twhinh204120);
+    }
 }
