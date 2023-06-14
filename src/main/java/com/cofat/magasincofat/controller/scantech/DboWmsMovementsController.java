@@ -17,7 +17,7 @@ public class DboWmsMovementsController {
     wmsMovementsServiceImpl dboWmsMovementsService;
 
 
-    // http://localhost:8084/SpringMVC/movements/add
+    // http://localhost:8086/SpringMVC/movements/add
     @PostMapping("/add")
     @ResponseBody
     public void add(@RequestBody wmsMovementsEntity dboWmsMovementsEntity)
@@ -25,7 +25,7 @@ public class DboWmsMovementsController {
         dboWmsMovementsService.addDboWmsMovements(dboWmsMovementsEntity);
     }
 
-    // http://localhost:8084/SpringMVC/movements/list
+    // http://localhost:8086/SpringMVC/movements/list
     @GetMapping("/list")
     @ResponseBody
     public List<wmsMovementsEntity> get() {
@@ -33,7 +33,7 @@ public class DboWmsMovementsController {
         return list;
     }
 
-    //  http://localhost:8084/SpringMVC/movements/find/
+    //  http://localhost:8086/SpringMVC/movements/find/
     @GetMapping("/find/{id}")
     @ResponseBody
     public Optional<wmsMovementsEntity> getById(@PathVariable("id") Integer id)
@@ -41,7 +41,7 @@ public class DboWmsMovementsController {
         return dboWmsMovementsService.getWmsMovementsEntityById(id);
     }
 
-    // http://localhost:8084/SpringMVC/movements/delete/id
+    // http://localhost:8086/SpringMVC/movements/delete/id
     @DeleteMapping("/delete/{id}")
 
     public String delete(@PathVariable("id") Integer id) {
