@@ -9,7 +9,7 @@ pipeline {
                           doGenerateSubmoduleConfigurations: false,
                           extensions: [[$class: 'CloneOption', credentialsId: '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']],
                           submoduleCfg: [],
-                          userRemoteConfigs: [[url: 'https://github.com/mannai-dev/magasinCofat']]
+                          userRemoteConfigs: [[url: 'https://github.com/mannai-dev/magasinCofat.git']]
                 ])
             }
         }
