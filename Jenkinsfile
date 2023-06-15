@@ -2,15 +2,17 @@ pipeline {
     agent any
       stages {
 
-       stage ('GIT'){
-                  steps {
-                   echo "Getting Project from Git";
-                   git branch: "master",
-                       url: "https://github.com/mannai-dev/magasinCofat.git",
-                       credentialsId: "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";
-                  }
-              }
-
+        stage('Checkout') {
+            steps {
+                checkout([$class: 'GitSCM',
+                          branches: [[name: '*/master']],
+                          doGenerateSubmoduleConfigurations: false,
+                          extensions: [[$class: 'CloneOption', credentialsId: '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']],
+                          submoduleCfg: [],
+                          userRemoteConfigs: [[url: 'https://github.com/mannai-dev/magasinCofat']]
+                ])
+            }
+        }
        stage("cleaning code") {
             steps {
                 script {
