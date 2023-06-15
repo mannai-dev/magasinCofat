@@ -5,7 +5,7 @@ pipeline {
        stage("cleaning code") {
             steps {
                 script {
-                   sh 'mvn -B -DskipTests clean '
+                   sh 'sudo mvn -B -DskipTests clean '
                 }
             }
         }
