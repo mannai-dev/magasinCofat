@@ -1,7 +1,14 @@
 pipeline {
     agent any
       stages {
-
+       stage("getting code from SCM ") {
+            steps {
+                script {
+               checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: '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', url: 'https://github.com/mannai-dev/magasinCofat.git']]])
+                }
+            }
+        }
+       
        stage("cleaning code") {
             steps {
                 script {
