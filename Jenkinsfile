@@ -33,16 +33,14 @@ pipeline {
         stage("code QualityCheck Sonar") {
             steps {
                 script {
-             sh " mvn sonar:sonar -Dsonar.projectKey=spring -Dsonar.host.url=http://localhost:9000   -Dsonar.login=d129e042cc399791013dd3e0438c18fa567f19ba"
-
-                }
+             sh " mvn sonar:sonar -Dsonar.projectKey=spring -Dsonar.host.url=http://localhost:9000   -Dsonar.login=b4ad42f4027f932d7a1754d8b3fad96ca85c49db"
+	               }
             }
         }
   stage("DEPLOY") {
             steps {
-
-                sh "mvn clean install deploy:deploy-file -DskipTests  -DgroupId=com.cofat.magasinCofat -DartifactId=magasinCofat -Dversion=1.0 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://localhost:8086/repository/maven-releases/ -Dfile=target/magasinCofat-1.0.jar"
-            }
+		   sh "mvn clean install deploy:deploy-file -DskipTests -DgroupId=com.cofat -DartifactId=MagasinCofat -Dversion=0.0.1-SNAPSHOT -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://localhost:8086/repository/maven-releases/ -Dfile=target/MagasinCofat-0.0.1-SNAPSHOT.jar"
+	    }
         }
                stage("building docker image") {
             steps {
