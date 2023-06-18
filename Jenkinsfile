@@ -33,7 +33,7 @@ pipeline {
         stage("code QualityCheck Sonar") {
             steps {
                 script {
-             sh " mvn sonar:sonar -Dsonar.projectKey=spring -Dsonar.host.url=http://localhost:9000   -Dsonar.login=0b774d2076672ea6a07361ca5f349cf2007d6848"
+             sh " mvn sonar:sonar -Dsonar.projectKey=spring -Dsonar.host.url=http://localhost:9000   -Dsonar.login=d129e042cc399791013dd3e0438c18fa567f19ba"
 
                 }
             }
