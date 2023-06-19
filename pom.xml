@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.cofat</groupId>
     <artifactId>MagasinCofat</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0</version>
     <name>GestionMagasin</name>
     <description>GestionMagasin project for Cofat Group</description>
     <properties>
