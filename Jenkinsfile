@@ -34,19 +34,15 @@ pipeline {
                 }
             }
         }
-       
-   stage("code QualityCheck Sonar") {
-    steps {
-        script {
-            withSonarQubeEnv('sonarqube') {
-                withCredentials([usernamePassword(credentialsId: 'sonarqube', usernameVariable: 'SONAR_LOGIN', passwordVariable: 'SONAR_PASSWORD')]) {
-                    sh "mvn sonar:sonar -Dsonar.projectKey=spring -Dsonar.host.url=http://localhost:9000 -Dsonar.login=$SONAR_LOGIN -Dsonar.password=$SONAR_PASSWORD"
-                }
+
+	 stage("code QualityCheck Sonar") {
+            steps {
+                script {
+             sh " mvn sonar:sonar -Dsonar.projectKey=spring -Dsonar.host.url=http://localhost:9000   -Dsonar.login=b4ad42f4027f932d7a1754d8b3fad96ca85c49db"
+	               }
             }
         }
-    }
-   }
-
+   
 
   stage("DEPLOY") {
             steps {
