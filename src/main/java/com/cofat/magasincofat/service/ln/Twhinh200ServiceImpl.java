@@ -249,9 +249,9 @@ public class Twhinh200ServiceImpl implements ITwhinh200Service{
 
 
 
-    //@Scheduled(cron = "0 0 8,16,23 * * ?") // 00:00-08:00-16:00
-   // @Scheduled(cron = "0 59 7,15,23 * * *")
-    @Scheduled(cron = "0 0/1 * * * ?")
+    // @Scheduled(cron = "0 0 8,16,23 * * ?") // 00:00-08:00-16:00
+     @Scheduled(cron = "0 59 7,15,23 * * *")
+    //@Scheduled(cron = "0 0/1 * * * ?")
     //@Scheduled(cron= "0 27 14,15,16 * * *")
     public void ajout220(){
              System.out.println("On va verifier si la table movements contient des ligne aves la date d'aujourd'hui ?");

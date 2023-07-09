@@ -1,5 +1,5 @@
-package com.cofat.magasincofat.entity;
-/*
+package com.cofat.magasincofat.entity.Authenticate;
+
 import com.cofat.magasincofat.entity.ln.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,11 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class LoginResponse {
-
     private User user;
-    private String jwtAccessToken;
-    private String jwtRefreshToken;
+    //private String jwtToken;
+    private String accessToken ;
 }
-
-
- */

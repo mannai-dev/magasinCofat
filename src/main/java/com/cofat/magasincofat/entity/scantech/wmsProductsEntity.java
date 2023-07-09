@@ -86,13 +86,15 @@ public class wmsProductsEntity implements Serializable {
 
     //Relation
 
-    @OneToMany(mappedBy = "wmsProductsEntity")
+  /*  @OneToMany(mappedBy = "wmsProductsEntity")
     private Collection<wmsMovementsEntity> wmsMovementEntities;
 
     public void setWmsMovements(Collection<wmsMovementsEntity> wmsMovementEntities) {
         this.wmsMovementEntities = wmsMovementEntities;
     }
 
+
+   */
 
 
 }

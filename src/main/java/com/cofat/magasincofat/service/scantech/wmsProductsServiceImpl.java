@@ -21,7 +21,7 @@ public class wmsProductsServiceImpl implements IwmsProductsService{
 
     @Override
     public List<wmsProductsEntity> getAllWmsProductsEntity() {
-        return null;
+        return productsRepository.findWmsProducts();
     }
 
     @Override
@@ -34,6 +34,9 @@ public class wmsProductsServiceImpl implements IwmsProductsService{
         return productsRepository.findById(id);
     }
 
+    public wmsProductsEntity getWmsProductById(Integer id) {
+        return productsRepository.findWmsProductById(id);
+    }
     @Override
     public wmsProductsEntity updateWmsProductsEntity(wmsProductsEntity wmsProducts) {
         return null;

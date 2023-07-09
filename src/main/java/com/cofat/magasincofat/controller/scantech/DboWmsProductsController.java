@@ -1,6 +1,7 @@
 package com.cofat.magasincofat.controller.scantech;
 
 
+import com.cofat.magasincofat.repository.scantech.wmsProductsRepository;
 import com.cofat.magasincofat.service.scantech.wmsProductsServiceImpl;
 import com.cofat.magasincofat.entity.scantech.wmsProductsEntity;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,8 @@ import java.util.Optional;
 public class DboWmsProductsController {
     @Autowired
     wmsProductsServiceImpl dboWmsProductsService;
-
+    @Autowired
+    wmsProductsRepository productsRepository;
 
     //http://localhost:8084/SpringMVC/products/add
     @PostMapping("/add/")
@@ -29,16 +31,24 @@ public class DboWmsProductsController {
     @GetMapping("/list")
     @ResponseBody
     public List<wmsProductsEntity> get() {
-        List<wmsProductsEntity> list = dboWmsProductsService.getAllWmsProductsEntity();
+      //  List<wmsProductsEntity> list = dboWmsProductsService.getAllWmsProductsEntity();
+      List<wmsProductsEntity> list = productsRepository.findWmsProducts();
         return list;
     }
 
     //http://localhost:8084/SpringMVC/products/find/
-    @GetMapping("/find/{id}")
+ /*   @GetMapping("/find/{id}")
     @ResponseBody
     public Optional<wmsProductsEntity> getById(@PathVariable("id") Integer id)
     {
         return dboWmsProductsService.getWmsProductsEntityById(id);
+    }
+*/
+    @GetMapping("/find/{id}")
+    @ResponseBody
+    public wmsProductsEntity getById(@PathVariable("id") Integer id)
+    {
+        return dboWmsProductsService.getWmsProductById(id);
     }
 
     //http://localhost:8084/SpringMVC/products/delete/id

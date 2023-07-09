@@ -1,5 +1,9 @@
 package com.cofat.magasincofat;
 
+import com.cofat.magasincofat.entity.ln.Role;
+import com.cofat.magasincofat.entity.ln.User;
+import com.cofat.magasincofat.repository.ln.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -11,12 +15,28 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
+import javax.annotation.PostConstruct;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.sql.DataSource;
 import java.util.Arrays;
 
+// test
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+/*import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+*/
+
 @SpringBootApplication
+//@EnableWebSecurity
 public class MagasinCofatApplication {
 
     public static void main(String[] args) {
@@ -41,4 +61,22 @@ public class MagasinCofatApplication {
         return new CorsFilter(urlBasedCorsConfigurationSource);
     } */
 
+  /*  private UserRepository userRepository;
+    private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    public MagasinCofatApplication(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+        this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
+    }
+/*
+    @PostConstruct
+    public void initAdminUser() {
+        User admin = new User();
+        admin.setUsername("admin123");
+        admin.setPassword(passwordEncoder.encode("admin1234"));
+        admin.setRole(Role.ADMIN);
+        userRepository.save(admin);
+    }
+*/
 }

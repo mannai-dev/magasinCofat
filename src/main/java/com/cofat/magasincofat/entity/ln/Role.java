@@ -1,26 +1,32 @@
 package com.cofat.magasincofat.entity.ln;
-/*
+
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import jakarta.persistence.*;
-//import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
+import lombok.ToString;
+
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
+@Table(name = "role")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class Role {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "role_name", length = 65)
-    @NotBlank(message = "Role required field")
     private String roleName;
 
-    private Boolean enabled;
-}
+    @OneToMany(mappedBy = "role", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonBackReference("roleUser")
+    @ToString.Exclude
+    private List<User> userList;
 
- */
+}

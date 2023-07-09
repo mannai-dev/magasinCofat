@@ -1,5 +1,5 @@
-package com.cofat.magasincofat.entity;
-/*
+package com.cofat.magasincofat.entity.Authenticate;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,4 +20,3 @@ public class LoginRequest {
 
 }
 
- */
