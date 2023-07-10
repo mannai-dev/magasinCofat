@@ -69,7 +69,7 @@ pipeline {
                  }
              }
          }
-
+        /*
 	      stage("deploy with docker-compose ") {
             steps {
                 script {
@@ -77,5 +77,6 @@ pipeline {
                 }
             }
         }
+        */
     }
 }
