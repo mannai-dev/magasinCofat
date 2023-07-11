@@ -53,7 +53,7 @@ pipeline {
                stage("building docker image") {
             steps {
                 script {
-                   sh 'docker build -t mannai3/pfe:spring .'
+                   sh 'docker build -t mannai3/pfe:spring -f  /var/lib/jenkins/workspace/Backend/Dockerfile-backend  .'
                 }
             }
         }
