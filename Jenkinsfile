@@ -34,11 +34,10 @@ pipeline {
                 }
             }
         }
-/*
 	 stage("code QualityCheck Sonar") {
             steps {
                 script {
-             sh " mvn sonar:sonar -Dsonar.projectKey=spring -Dsonar.host.url=http://localhost:9000   -Dsonar.login=b4ad42f4027f932d7a1754d8b3fad96ca85c49db"
+             sh " mvn sonar:sonar -Dsonar.projectKey=spring -Dsonar.host.url=http://localhost:9000   -Dsonar.login=c69bc11587eb3c42a96ef8464377a1dfdb7ee733"
 	               }
             }
         }
@@ -49,7 +48,7 @@ pipeline {
 		   sh "mvn clean install deploy:deploy-file -DskipTests -DgroupId=com.cofat -DartifactId=MagasinCofat -Dversion=1.0 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://localhost:8081/repository/maven-releases/ -Dfile=target/MagasinCofat-1.0.jar"
 	    }
         }
-	      */
+	
                stage("building docker image") {
             steps {
                 script {
