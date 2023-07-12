@@ -42,13 +42,13 @@ pipeline {
             }
         }
    
-
+/*
   stage("DEPLOY") {
             steps {
 		   sh "mvn clean install deploy:deploy-file -DskipTests -DgroupId=com.cofat -DartifactId=MagasinCofat -Dversion=1.0 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://localhost:8081/repository/maven-releases/ -Dfile=target/MagasinCofat-1.0.jar"
 	    }
         }
-	
+*/	
                stage("building docker image") {
             steps {
                 script {
