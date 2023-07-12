@@ -5,6 +5,6 @@ services:
       context: .
       dockerfile: Dockerfile-backend
     ports:
-      - 8086:8086
+      - 8087:8087
     volumes:
       - ./application.properties:/app/config/application.properties
